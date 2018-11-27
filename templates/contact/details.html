@@ -1,0 +1,20 @@
+{% extends 'home/layout.html' %}
+{% block content %}
+<h3 class="center-align red light-3">{{post.title}}
+</h3>
+<div class="card">
+  <div class="card-content">
+
+
+    {% for p in post %}
+    <li class="collection-item"> {{p.body}}</li>
+    <div class="card-action">
+      {{p.created_at}}
+    </div>
+    {% endfor %}
+
+  </div>
+
+</div>
+<a href="/contact" class="btn">Go Back</a>
+{% endblock %}

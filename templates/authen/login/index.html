@@ -1,0 +1,78 @@
+<!DOCTYPE html> {% load staticfiles%}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link type="text/css" rel="stylesheet" href=" {% static 'css/animation.css' %}" />
+  <!-- Import materialize.css -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+  <title>Login</title>
+  <style>
+    body {
+        background: url("{% static 'img/p5.jpg' %}");
+      
+        opacity: 0.7;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 5%;
+      
+      }
+      .login {
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px white;
+      }
+      #btn-close{
+        position: absolute; left: 67vw; border-radius: 50%; border: 1px solid black; margin: 5px; padding: 10px; background: linear-gradient(black,white);
+      }
+      #btn-close:hover{
+        background-color: green;
+        color: white;
+      }
+    </style>
+</head>
+
+<body>
+  <section class="section section-login">
+
+    <div class="container">
+
+      <div class="row">
+        <a class="darken-2 white-text right animated flash" id="btn-close" href="/">
+          X
+        </a>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m8 offset-m2 l6 offset-l3">
+          <br>
+          <div class="card-panel login black darken-2 white-text center">
+
+            <h2>Sign In</h2>
+            <form action="postsign" method="POST">
+              {% csrf_token %}
+              <div class="input-field">
+                <i class="material-icons prefix">email</i>
+                <input type="email" id="email" name="email" />
+                <label class="red-text" for="email"></label>
+              </div>
+              <div class="input-field">
+                <i class="material-icons prefix">lock</i>
+                <input type="password" id="password" name="pass" />
+                <label class="red-text" for="password"></label>
+                <a href="/signup">Don't have an account yet? Sign Up here</a>
+              </div>
+              <input type="submit" value="Sign In" class="btn btn-medium btn-extended grey lighten-4 black-text" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

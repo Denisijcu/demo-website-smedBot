@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Create</title>
+</head>
+
+<body>
+  <h1>Create Daily Report</h1>
+  <form action="/postcreate" method="post">
+    {% csrf_token%}
+    Work Assigned:
+    <input type="text" name="work"><br><br>
+    Progress:
+    <textarea name="progress" id="" cols="40" rows="5"></textarea>
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+
+</html>
